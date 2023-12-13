@@ -1,5 +1,5 @@
 import Navbars from './Components/Header';
-import Intro from './Components/Intro';
+import Login from './Components/Intro';
 import './App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
     <div>
       <Navbars/>
-      <Intro/>
+      <Login/>
     </div>
     </>
   )
