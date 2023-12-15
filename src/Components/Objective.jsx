@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function ResponsiveAutoExample() {
+function Obj() {
   return (
     <Container>
       <Row>
@@ -23,4 +23,4 @@ function ResponsiveAutoExample() {
   );
 }
 
-export default ResponsiveAutoExample;
+export default Obj;
