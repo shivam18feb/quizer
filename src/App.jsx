@@ -2,6 +2,7 @@ import Navbars from './Components/Header';
 import Login from './Components/Login';
 import Studta from './Components/student';
 
+
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Navbars/>
       <Login/>
       <Studta/>
+     
     </div>
  
   )
