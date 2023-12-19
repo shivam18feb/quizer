@@ -12,7 +12,8 @@ body {
 
 
 .card {
-  border: none; /* Remove the default card border */
+  padding: 5px;
+
 }
 
 .form-label {
