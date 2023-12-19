@@ -92,10 +92,18 @@ function Login() {
       alert("No data to export.");
       return;
     }
-
-    const ws = XLSX.utils.json_to_sheet(formSubmissions);
+  
     const wb = XLSX.utils.book_new();
+  
+    // Transform formSubmissions into an array of arrays suitable for XLSX
+    const dataForExcel = formSubmissions.map((submission) =>
+      Object.values(submission)
+    );
+  
+    // Add a sheet for the current submissions
+    const ws = XLSX.utils.aoa_to_sheet([Object.keys(formData), ...dataForExcel]);
     XLSX.utils.book_append_sheet(wb, ws, "Form Submissions");
+  
     XLSX.writeFile(wb, "form_submissions.xlsx");
   };
 
