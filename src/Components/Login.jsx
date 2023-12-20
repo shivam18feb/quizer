@@ -93,18 +93,21 @@ function Login() {
       alert("No data to export.");
       return;
     }
-  
+
     const wb = XLSX.utils.book_new();
-  
+
     // Transform formSubmissions into an array of arrays suitable for XLSX
     const dataForExcel = formSubmissions.map((submission) =>
       Object.values(submission)
     );
-  
+
     // Add a sheet for the current submissions
-    const ws = XLSX.utils.aoa_to_sheet([Object.keys(formData), ...dataForExcel]);
+    const ws = XLSX.utils.aoa_to_sheet([
+      Object.keys(formData),
+      ...dataForExcel,
+    ]);
     XLSX.utils.book_append_sheet(wb, ws, "Form Submissions");
-  
+
     XLSX.writeFile(wb, "form_submissions.xlsx");
   };
 
@@ -315,12 +318,7 @@ function Login() {
                 </Button>
               </div>
               <div className="row justify-content-center mt-5">
-                <Button
-                  variant="success"
-                 
-                  size="lg"
-                  onClick={exportToExcel}
-                >
+                <Button variant="success" size="lg" onClick={exportToExcel}>
                   Export to Excel
                 </Button>
               </div>
@@ -333,7 +331,9 @@ function Login() {
       <div className="mt-5">
         <ul>
           {formSubmissions.map((submission, index) => (
-            <li key={index}>{JSON.stringify(submission)}</li>
+            <li key={index}>
+              <pre>{JSON.stringify(submission, null, 2)}</pre>
+            </li>
           ))}
         </ul>
       </div>

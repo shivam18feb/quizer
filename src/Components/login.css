@@ -1,23 +1,19 @@
 body {
-    /* fallback for old browsers */
-    background: #f093fb;
-  
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
-  
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
-  }/* Login.css */
+  /* Trending attractive background color */
+  background: #ffddcc; /* Light peach or any other attractive light color you prefer */
 
-
+  /* Gradient for a more dynamic look */
+  background: linear-gradient(to bottom right, #ffddcc, #ffaf99); /* Gradient from light peach to light orange */
+}
 
 .card {
-  padding: 5px;
-
+  padding: 15px; /* Adjusted padding for better spacing */
+  background: #ffffff; /* White background for cards */
+  border-radius: 10px; /* Adding rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle box shadow for cards */
 }
 
 .form-label {
   font-weight: bold;
+  color: #333; /* Dark color for better visibility on light backgrounds */
 }
-
-/* Add more styles as needed */
