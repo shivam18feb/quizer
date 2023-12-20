@@ -1,9 +1,8 @@
 body {
   /* Trending attractive background color */
-  background: #ffddcc; /* Light peach or any other attractive light color you prefer */
-
+ 
   /* Gradient for a more dynamic look */
-  background: linear-gradient(to bottom right, #ffddcc, #ffaf99); /* Gradient from light peach to light orange */
+  background: linear-gradient(to bottom right, #f56720, #eee3e0); /* Gradient from light peach to light orange */
 }
 
 .card {
