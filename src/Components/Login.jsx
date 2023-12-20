@@ -11,7 +11,7 @@ import {
   Button,
 } from "react-bootstrap";
 import * as XLSX from "xlsx";
-import "./Login.css";
+import "./login.css";
 
 function Login() {
   const [formData, setFormData] = useState({
