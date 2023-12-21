@@ -313,12 +313,22 @@ function Login() {
                 </Col>
               </Row>
               <div className="row justify-content-center mt-5">
-                <Button variant="primary" type="submit" size="lg">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  size="lg"
+                  style={{ width: "200px" }}
+                >
                   Submit
                 </Button>
               </div>
-              <div className="row justify-content-center mt-5">
-                <Button variant="success" size="lg" onClick={exportToExcel}>
+              <div className="row justify-content-center mt-3">
+                <Button
+                  variant="success"
+                  size="lg"
+                  onClick={exportToExcel}
+                  style={{ width: "200px" }}
+                >
                   Export to Excel
                 </Button>
               </div>

@@ -1,14 +1,30 @@
-import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Obj from "./Objective";
 import "./header.css";
 
 function Navbars() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    // Example: Fetch user authentication status
+    const fetchAuthenticationStatus = async () => {
+      try {
+        // Replace the following line with your actual authentication logic or API call
+        const response = await fetch("/api/authentication");
+        const data = await response.json();
+
+        // Set the authentication status based on the response
+        setIsAuthenticated(data.isAuthenticated);
+      } catch (error) {
+        console.error("Error fetching authentication status:", error);
+      }
+    };
+
+    fetchAuthenticationStatus();
+  }, []); // Empty dependency array means this effect runs once when the component mounts
+
 
   return (
     <Router>
@@ -40,7 +56,7 @@ function Navbars() {
         <Routes>
           <Route
             path="/objective"
-            element={isAuthenticated ? <Obj /> : null}
+            element={isAuthenticated ? <Obj /> : <Navigate to="/Obj" />}
           />
           {/* Add more Route components for other pages as needed */}
         </Routes>
